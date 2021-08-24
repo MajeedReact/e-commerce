@@ -1,0 +1,32 @@
+<div class="navigation">
+  <div class="logo">
+    <a routerLink="/">
+      <h3>MOBILE & ELECTRONICS</h3>
+    </a>
+  </div>
+
+  <a ngbDropdown class="nav-item dropdown">
+    <a
+      class="links"
+      ngbDropdownToggle
+      class="nav-link dropdown-toggle"
+      id="navbarDropdown"
+      role="button"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      Profile
+    </a>
+    <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <a class="dropdown-item" href="#">My profile</a>
+      <a class="dropdown-item" href="#">Address</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Favourite products</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Sign out</a>
+    </div>
+  </a>
+
+  <a routerLink="/cart">Cart ({{ totalCart }})</a>
+</div>

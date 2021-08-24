@@ -1,0 +1,10 @@
+<app-banner></app-banner>
+<div class="products" fxLayout="row wrap">
+  <app-products-list
+    fxFlexOffset="5%"
+    style="margin-bottom: 10px"
+    *ngFor="let product of productList"
+    [products]="product"
+  >
+  </app-products-list>
+</div>

@@ -1,0 +1,24 @@
+<div
+  class="empty-cart"
+  *ngIf="cartList.length === 0"
+  fxLayoutAlign="center end"
+>
+  <img height="500px" width="500px" src="../../assets/empty-cart.svg" />
+  <h4 style="position: absolute">Your shopping cart is empty</h4>
+</div>
+<section *ngIf="cartList.length > 0">
+  <div class="title">Shopping Cart</div>
+  <div *ngFor="let product of cartList">
+    <app-cart-item [cartItem]="product"></app-cart-item>
+  </div>
+  <div class="removeAll">
+    <button class="btn btn-danger" (click)="removeAllFromCart()">
+      Remove all
+    </button>
+  </div>
+
+  <strong class="total">Total: {{ total | currency: "USD" }}</strong>
+  <div class="next" fxLayoutAlign="center center">
+    <button routerLink="/confirmed" class="btn btn-dark">Next</button>
+  </div>
+</section>

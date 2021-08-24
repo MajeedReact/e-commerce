@@ -1,0 +1,69 @@
+<body fxLayoutAlign="center">
+  <form
+    #form="ngForm"
+    (ngSubmit)="submitForm()"
+    fxLayout="column"
+    fxLayoutAlign="space-between"
+  >
+    <label>Full name</label>
+    <input
+      required
+      name="fullName"
+      type="text"
+      minlength="4"
+      placeholder="Minimum 4 character"
+      [(ngModel)]="fullName"
+      #name="ngModel"
+    />
+    <br />
+    <label>Address</label>
+    <input
+      required
+      name="Address"
+      type="text"
+      minlength="6"
+      placeholder="Minimum 6 character"
+      [(ngModel)]="address"
+      #location="ngModel"
+    />
+    <br />
+    <label>Credit card number</label>
+    <input
+      required
+      name="creditCard"
+      type="text"
+      minlength="16"
+      maxlength="16"
+      placeholder="16 digit"
+      [(ngModel)]="creditCard"
+      (keypress)="numberOnly($event)"
+      #credit="ngModel"
+    />
+    <small id="creditCard" class="form-text text-muted"
+      >We'll never share your payment details with anyone else.</small
+    >
+    <div *ngIf="name.invalid && name.dirty">
+      <div *ngIf="name.errors?.required">Please provide your full name.</div>
+    </div>
+    <div *ngIf="location.invalid && location.dirty">
+      <div *ngIf="location.errors?.required">Please provide your address.</div>
+    </div>
+    <div *ngIf="credit.invalid && credit.dirty">
+      <div *ngIf="credit.errors?.required">
+        Please provide your credit card.
+      </div>
+    </div>
+
+    <div class="checkout" fxLayout="column">
+      <button
+        routerLink="/confirmed"
+        (click)="submitForm()"
+        type="submit"
+        class="btn btn-dark"
+        [disabled]="form.invalid"
+      >
+        Check out
+      </button>
+    </div>
+  </form>
+</body>

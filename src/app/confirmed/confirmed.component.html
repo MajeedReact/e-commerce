@@ -1,0 +1,29 @@
+<body fxLayoutAlign="center center">
+  <div>
+    <div *ngIf="orders.fullName.length === 0">
+      <app-checkout-details
+        (orderDetails)="getOrderDetails($event)"
+      ></app-checkout-details>
+    </div>
+    <div *ngIf="orders.fullName.length >= 4">
+      <h3 fxLayoutAlign="center">Success 🎉</h3>
+      <p fxLayoutAlign="center">
+        Thank you,
+        <strong style="margin-left: 5px"> {{ orders.fullName }} </strong>
+      </p>
+      <p fxLayoutAlign="center">
+        Your order
+        <strong style="margin: 0 5px">{{ total | currency: "USD" }}</strong>
+        is confirmed!
+      </p>
+      <p fxLayoutAlign="center">
+        Please allow 1-3 business day(s) for shipping.
+      </p>
+      <div fxLayoutAlign="center">
+        <button class="btn btn-dark" routerLink="/">
+          Back to product list
+        </button>
+      </div>
+    </div>
+  </div>
+</body>

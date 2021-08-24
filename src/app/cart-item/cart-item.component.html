@@ -1,0 +1,36 @@
+<div class="shopping-cart">
+  <!-- Title -->
+
+  <div fxLayout="row">
+    <div class="items">
+      <div class="buttons">
+        <button (click)="removeSelectedItem(cartItem)" class="btn btn-danger">
+          Remove
+        </button>
+      </div>
+    </div>
+
+    <div class="image">
+      <img width="100px" height="150" src="{{ cartItem.url }}" alt="" />
+    </div>
+    <div fxLayoutGap="15%" fxLayout="row wrap">
+      <div class="item-name">
+        <strong>
+          {{ cartItem.name }}
+        </strong>
+      </div>
+      <div>
+        <input
+          type="number"
+          value="{{ cartItem.quantity }}"
+          (change)="updateProduct()"
+          [(ngModel)]="cartItem.quantity"
+          min="1"
+        />
+      </div>
+      <div>
+        <strong>${{ cartItem.price }}</strong>
+      </div>
+    </div>
+  </div>
+</div>

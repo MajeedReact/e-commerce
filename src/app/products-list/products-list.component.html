@@ -1,0 +1,21 @@
+<div class="product-container">
+  <a routerLink="/product/{{ products.id }}">
+    <img class="product-image" src="{{ products.url }}" />
+  </a>
+  <div class="bottom-container">
+    <p style="text-align: center">{{ products.name }}</p>
+    <p class="price">${{ products.price }}</p>
+    <ngb-alert
+      #selfClosingAlert
+      *ngIf="successMessage"
+      type="success"
+      (closed)="successMessage = ''"
+      >{{ successMessage }}
+    </ngb-alert>
+    <p>
+      <button class="btn btn-dark" (click)="addToCart(products)">
+        Add to cart
+      </button>
+    </p>
+  </div>
+</div>

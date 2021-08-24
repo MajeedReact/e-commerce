@@ -1,6 +1,10 @@
 # ECommerce
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.3.
+This project was built for udacity nanodegree program using Angular framework.
+
+## Data
+
+The data was used from ./src/assests/data.json which is a mimick of an API array of objects, this project can retrive data from external api by replacing the url in the service of products.
 
 ## Development server
 
@@ -14,14 +18,22 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Routing
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- "/" Home page component
 
-## Running end-to-end tests
+- "/cart" shopping cart
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- "/product/:id" displays details about the specific product with that ID
 
-## Further help
+## Features
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Product list
+
+- Product details page
+
+- Shopping Cart
+
+- Shopping Cart item counter
+
+## Photos
