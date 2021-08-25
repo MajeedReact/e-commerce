@@ -18,7 +18,8 @@ export class CartItemComponent implements OnInit {
     this.products = this.cartService.productList;
     this.total = this.cartService.total;
   }
-  updateProduct() {
+  updateProduct(ev: number) {
+    this.cartItem.quantity = ev;
     this.cartService.updatedProduct();
   }
   removeSelectedItem(cartItem: products) {
